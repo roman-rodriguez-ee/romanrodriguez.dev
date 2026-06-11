@@ -253,36 +253,21 @@ h1 {
   margin-top: 34px;
 }
 
-.portrait-placeholder {
-  border: 1px solid rgba(212, 175, 55, 0.25);
+.portrait-frame {
+  border: 1px solid rgba(212, 175, 55, 0.35);
   background:
     linear-gradient(135deg, rgba(212,175,55,0.10), rgba(255,255,255,0.03)),
     #0b1020;
-  min-height: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 12px;
+  box-shadow: 0 0 45px rgba(212, 175, 55, 0.10);
 }
 
-.portrait-inner {
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(212, 175, 55, 0.7);
-  color: #d4af37;
-  font-family: Georgia, serif;
-  font-size: 54px;
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.12);
-}
-
-.portrait-placeholder p {
-  margin-top: 22px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.portrait-frame img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(12%) contrast(105%);
 }
 
 .focus-tags,
@@ -413,8 +398,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .portrait-placeholder {
-    max-width: 420px;
+  .portrait-frame {
+  max-width: 420px;
   }
 }
 
