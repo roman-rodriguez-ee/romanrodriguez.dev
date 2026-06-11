@@ -378,6 +378,70 @@ h1 {
   color: #d4af37;
 }
 
+.resume-form {
+  margin-top: 34px;
+  max-width: 880px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  padding: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  color: #d4af37;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(5, 7, 13, 0.72);
+  color: #f5f7fa;
+  padding: 13px 14px;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(212, 175, 55, 0.75);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.10);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+@media (max-width: 760px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .resume-form {
+    padding: 22px;
+  }
+}
+
 footer {
   padding: 34px 6%;
   text-align: center;
