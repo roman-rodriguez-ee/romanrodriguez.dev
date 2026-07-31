@@ -633,32 +633,150 @@ footer {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.55), transparent 28%),
-    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.42), transparent 24%),
-    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(212,175,55,0.10), transparent);
-  animation: lightningFlash 0.9s ease-out forwards;
+    radial-gradient(circle at 55% 18%, rgba(255, 255, 255, 0.72), transparent 12%),
+    radial-gradient(circle at 50% 25%, rgba(212, 175, 55, 0.45), transparent 28%),
+    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(212,175,55,0.12), transparent 70%);
+  animation: stormFlash 1.15s ease-out forwards;
 }
 
-@keyframes lightningFlash {
+.page-flash::before {
+  content: "";
+  position: absolute;
+  top: -8%;
+  left: 48%;
+  width: 150px;
+  height: 115%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0.95),
+    rgba(212,175,55,0.78),
+    rgba(255,255,255,0)
+  );
+  clip-path: polygon(
+    52% 0%,
+    70% 18%,
+    57% 18%,
+    82% 42%,
+    64% 42%,
+    88% 67%,
+    56% 67%,
+    72% 100%,
+    28% 58%,
+    49% 58%,
+    24% 33%,
+    43% 33%,
+    22% 10%,
+    39% 10%
+  );
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,0.95))
+    drop-shadow(0 0 28px rgba(212,175,55,0.85))
+    drop-shadow(0 0 55px rgba(255,255,255,0.45));
+  transform: rotate(8deg);
+  animation: boltStrike 1.05s ease-out forwards;
+}
+
+.page-flash::after {
+  content: "";
+  position: absolute;
+  top: 6%;
+  left: 27%;
+  width: 95px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.95),
+    rgba(212,175,55,0.65),
+    rgba(255,255,255,0)
+  );
+  clip-path: polygon(
+    50% 0%,
+    66% 22%,
+    54% 22%,
+    76% 48%,
+    59% 48%,
+    70% 82%,
+    38% 55%,
+    50% 55%,
+    30% 28%,
+    43% 28%
+  );
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,0.9))
+    drop-shadow(0 0 22px rgba(212,175,55,0.75));
+  transform: rotate(-14deg);
+  animation: sideBoltStrike 1.05s ease-out forwards;
+}
+
+@keyframes stormFlash {
   0% {
     opacity: 0;
   }
-  8% {
+  5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  16% {
     opacity: 0.95;
   }
-  14% {
-    opacity: 0.15;
+  24% {
+    opacity: 0.18;
   }
-  22% {
-    opacity: 0.75;
-  }
-  35% {
-    opacity: 0.08;
+  38% {
+    opacity: 0.55;
   }
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@keyframes boltStrike {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) rotate(8deg) scaleY(0.85);
+  }
+  7% {
+    opacity: 1;
+    transform: translateY(0) rotate(8deg) scaleY(1);
+  }
+  13% {
+    opacity: 0.15;
+  }
+  19% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(16px) rotate(8deg);
+  }
+}
+
+@keyframes sideBoltStrike {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-14deg) scaleY(0.85);
+  }
+  9% {
+    opacity: 0.85;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  21% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px) rotate(-14deg);
   }
 }
 
