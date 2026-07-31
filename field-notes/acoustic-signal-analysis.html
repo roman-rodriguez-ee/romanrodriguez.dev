@@ -11,7 +11,21 @@
 </head>
 
 <body>
-  <div class="page-flash"></div>
+  <div class="page-flash" aria-hidden="true">
+  <svg class="lightning-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <g class="bolt-group">
+      <path class="bolt main-bolt" d="M8 -5 L6 8 L8 20 L5 34 L9 47 L6 62 L10 78 L7 105" />
+      <path class="bolt main-bolt delay-1" d="M51 -5 L49 10 L52 23 L48 37 L53 52 L50 68 L55 84 L52 105" />
+      <path class="bolt main-bolt delay-2" d="M73 -5 L76 12 L72 25 L78 39 L74 55 L80 71 L76 88 L82 105" />
+
+      <path class="bolt branch" d="M52 23 L61 31 L58 42 L66 52" />
+      <path class="bolt branch delay-1" d="M49 10 L41 19 L44 29 L35 39" />
+      <path class="bolt branch delay-2" d="M76 12 L86 22 L83 34 L92 45" />
+      <path class="bolt branch" d="M74 55 L65 64 L69 74 L60 86" />
+      <path class="bolt branch delay-1" d="M9 47 L18 56 L15 66 L24 78" />
+    </g>
+  </svg>
+</div>
 
   <header class="site-header">
     <a href="../index.html#home" class="brand">
