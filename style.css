@@ -620,4 +620,11 @@ footer {
 
 .note-link:hover .read-more-button {
   transform: translateY(-2px);
+  
+}
+.signature {
+  margin-top: 34px;
+  color: #d4af37 !important;
+  font-weight: 700;
+  letter-spacing: 0.8px;
 }
