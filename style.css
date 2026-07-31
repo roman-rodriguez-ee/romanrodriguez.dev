@@ -628,3 +628,42 @@ footer {
   font-weight: 700;
   letter-spacing: 0.8px;
 }
+.page-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.55), transparent 28%),
+    radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.42), transparent 24%),
+    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(212,175,55,0.10), transparent);
+  animation: lightningFlash 0.9s ease-out forwards;
+}
+
+@keyframes lightningFlash {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  14% {
+    opacity: 0.15;
+  }
+  22% {
+    opacity: 0.75;
+  }
+  35% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-flash {
+    display: none;
+  }
+}
