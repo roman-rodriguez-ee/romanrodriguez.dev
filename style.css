@@ -594,3 +594,30 @@ footer {
     padding: 76px 6%;
   }
 }
+
+.note-link {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+}
+
+.read-more-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  min-height: 40px;
+  padding: 10px 16px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #05070d;
+  background: #d4af37;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.18);
+}
+
+.note-link:hover .read-more-button {
+  transform: translateY(-2px);
+}
